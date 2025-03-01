@@ -1,6 +1,7 @@
 import Banner from "@/components/banner/Banner";
 import Featured from "@/components/section/Featured";
 import OurServices from "@/components/section/OurServices";
+import PeopleUs from "@/components/section/PeopleUs";
 import SearchTutoring from "@/components/section/SearchTutoring";
 import StudentsGuardians from "@/components/section/StudentsGuardians";
 import TuitionType from "@/components/section/TuitionType";
@@ -16,6 +17,7 @@ export default function Home() {
       <Featured />
       <WorksTutors />
       <StudentsGuardians />
+      <PeopleUs />
     </div>
   );
 }
