@@ -1,5 +1,6 @@
 import Banner from "@/components/banner/Banner";
 import Featured from "@/components/section/Featured";
+import FindSubject from "@/components/section/FindSubject";
 import OurServices from "@/components/section/OurServices";
 import PeopleUs from "@/components/section/PeopleUs";
 import SearchTutoring from "@/components/section/SearchTutoring";
@@ -12,6 +13,7 @@ export default function Home() {
     <div className="">
       <Banner />
       <SearchTutoring />
+      <FindSubject />
       <TuitionType />
       <OurServices />
       <Featured />
