@@ -26,7 +26,7 @@ const page = () => {
   return (
     <div className="w-11/12 mx-auto flex justify-center items-center">
       <div className="grid grid-cols-2 justify-center items-center w-full">
-        <Image src="/icon/register.svg" alt="channel" width={500} height={500} />
+        <Image src="/icon/login.svg" alt="channel" width={500} height={500} />
         <Card className="w-full my-10  p-4">
           <CardHeader>
             <p className="text-3xl font-bold text-center">Login</p>
