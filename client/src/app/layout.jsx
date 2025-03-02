@@ -1,6 +1,8 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import AuthProvider from "@/provider/AuthProvider";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,13 +24,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <header>
-          <Header />
-        </header>
-        <main>{children}</main>
-        <footer>
-          <Footer />
-        </footer>
+        <AuthProvider>
+          <header>
+            <Header />
+          </header>
+          <main>{children}</main>
+          <footer>
+            <Footer />
+          </footer>
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );

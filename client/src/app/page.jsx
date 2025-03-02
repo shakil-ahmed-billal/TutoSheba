@@ -10,7 +10,7 @@ import WorksTutors from "@/components/section/WorksTutors";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="relative">
       <Banner />
       <SearchTutoring />
       <FindSubject />

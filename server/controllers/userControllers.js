@@ -3,22 +3,22 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 // Utility function to send response with token
-const sendResponseWithToken = (res, token, user) => {
+const sendResponseWithToken = (res, token, user , message) => {
   return res
     .cookie("token", token, {
       httpOnly: process.env.NODE_ENV === "production",
       secure: process.env.NODE_ENV === "production",
       sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
     })
-    .status(200)
+    .status(201)
     .json({
       success: true,
-      message: "User created successfully",
-      data: {
+      message: `User ${message} successfully`,
+      user: {
         name: user.name,
-        phone: user.phone,
-        role: user.role,
-        email: user.email || null,
+        number: user.phone,
+        email: user.email,
+        photoURL: user.photoURL,
       },
     });
 };
@@ -70,10 +70,11 @@ const createUser = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Generate token
-    const token = jwt.sign({ phone, email }, process.env.JWT_SECRET_KEY, {
+    const token = jwt.sign({ phone }, process.env.JWT_SECRET_KEY, {
       expiresIn: "1d",
     });
 
+    console.log(token);
     // Create user based on role
     const userData = {
       name,
@@ -94,7 +95,7 @@ const createUser = async (req, res) => {
         ? await Teacher.create(userData)
         : await Student.create(userData);
 
-    return sendResponseWithToken(res, token, user);
+    return sendResponseWithToken(res, token, user , "register");
   } catch (error) {
     console.error("Error creating user:", error);
     return res
@@ -150,7 +151,7 @@ const loginUser = async (req, res) => {
       }
     );
 
-    return sendResponseWithToken(res, token, user);
+    return sendResponseWithToken(res, token, user , "login");
   } catch (error) {
     console.error("Error logging in user:", error);
     return res

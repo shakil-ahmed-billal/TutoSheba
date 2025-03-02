@@ -5,9 +5,9 @@ const StudentsGuardians = () => {
             <p className="text-3xl font-bold text-center py-10">Here's how it works for <span className="text-[#800080]">Students/Guardians</span> </p>
             <div className="flex flex-col">
                 <div className="flex">
-                    <img src="" alt="" />
+                    
                     <div className="flex shadow-md rounded-lg bg-white p-5 gap-5">
-                        <img className="" src="/icon/icon1.png" alt="" />
+                        <img className="" src="/icon/icon1.png" alt="icon Image" />
                         <div className="">
                             <p>Search for Tutors or Post your tuition requirements</p>
                             <p>Post Tution by creating Account or without Account.</p>
@@ -17,7 +17,7 @@ const StudentsGuardians = () => {
                 <div className="flex md:ml-[50px]">
                     <img className="md:flex hidden md:-mt-12" src="/dashed-arrow.svg" alt="" />
                     <div className="flex shadow-md rounded-lg bg-white p-5 gap-5 mt-12">
-                        <img src="/icon/icon2.png" alt="" />
+                        <img src="/icon/icon2.png" alt="Icon  Image" />
                         <div className="">
                             <p>Search for Tutors or Post your tuition requirements</p>
                             <p>Post Tution by creating Account or without Account.</p>
