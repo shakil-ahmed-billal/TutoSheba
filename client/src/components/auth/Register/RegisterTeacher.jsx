@@ -153,7 +153,7 @@ const RegisterTeacher = () => {
 
             {/* Submit Button */}
             <Button type="submit" className="w-full" disabled={loading}>
-                {loading ? "Registering..." : "Register"}
+                {loading ? "Registering..." : "Register in as a Tutor"}
             </Button>
         </form>
     );

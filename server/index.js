@@ -4,6 +4,7 @@ dotenv.config();
 const morgan = require("morgan");
 const cors = require("cors");
 const connectDB = require("./config/db");
+const tutorRoutes = require('./routes/tutorRoutes');
 
 // route import space
 const userRoutes = require("./routes/userRoutes");
@@ -26,6 +27,7 @@ connectDB();
 
 // routes
 app.use("/api", userRoutes);
+app.use("/api", tutorRoutes);
 
 // testing server
 app.get("/", (req, res) => {

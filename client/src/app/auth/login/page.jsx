@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label"
 import useAuth from "@/hooks/useAuth"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import toast from "react-hot-toast"
@@ -16,6 +17,7 @@ const page = () => {
 
   const [isTeacher, setIsTeacher] = useState(false);
   const { userLogin } = useAuth();
+  const router = useRouter();
 
   const {
     register,
@@ -39,6 +41,7 @@ const page = () => {
       const data = await userLogin(userInfo);
       if (data.success) {
         toast.success(data.message);
+        router.push("/");
       }else{
         toast.error(data.message);
       }
@@ -105,7 +108,7 @@ const page = () => {
                 />
               </div>
               <Button type="submit" className="w-full">
-                Register
+                Login in as a {isTeacher ? "Teacher" : "Student"}
               </Button>
             </form>
           </CardContent>
