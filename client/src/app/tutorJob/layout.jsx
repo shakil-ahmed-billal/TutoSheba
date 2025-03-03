@@ -1,6 +1,12 @@
 "use client";
 
 import Sidebar from '@/components/sidebar/Sidebar';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { FilterX } from 'lucide-react';
+import { Menu } from 'lucide-react';
+import { Filter } from 'lucide-react';
+import Link from 'next/link';
 import { useState } from 'react';
 
 
@@ -24,18 +30,31 @@ function Layout({ children }) {
                 )}
 
                 {/* Main Content */}
-                <div className="flex gap-5 flex-1">
+                <div className="flex md:gap-5 flex-1">
                     {/* Sidebar - Fixed position */}
                     <div className="hidden md:block">
                         <Sidebar />
                     </div>
 
                     {/* Mobile Sidebar Toggle */}
-                    <div className="md:hidden p-4">
+                    <div className="md:hidden">
                         <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="bg-primary text-white px-4 py-2 rounded-md">
-                            {isMobileMenuOpen ? 'Hide Filters' : 'Show Filters'} </button>
-                        {isMobileMenuOpen && ( <div className="mt-4"> <Sidebar className="w-full h-auto static" /> </div> )} </div>
+                            className="bg-primary text-white px-4 py-2 rounded-md fixed top-18">
+                            {isMobileMenuOpen ? <Filter /> : <FilterX />} </button>
+                        {isMobileMenuOpen && ( <div className="mt-4">  <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                <SheetTrigger asChild>
+                    <Button variant="ghost" size="icon" className="md:hidden">
+                        <Menu className="h-6 w-6" />
+                    </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-[240px] sm:w-[280px]">
+                    <div className="flex flex-col space-y-4">
+                        <Link href="/home" className="font-bold text-lg">Home</Link>
+                        <Link href="/dashboard" className="font-bold text-lg">Dashboard</Link>
+                        <Link href="/contact" className="font-bold text-lg">Contact</Link>
+                    </div>
+                </SheetContent>
+            </Sheet> </div> )} </div>
                     {/* Job Listings */}
                     {children}
                 </div>
