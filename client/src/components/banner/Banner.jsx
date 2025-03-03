@@ -6,7 +6,7 @@ import { Search } from "lucide-react"
 import { ArrowRight } from "lucide-react"
 
 const Banner = () => {
-    return (
+return (
         <div className=" pt-20">
             <div className="w-11/12 mx-auto py-5 md:flex gap-5">
                 <div className="flex flex-col justify-center ">
