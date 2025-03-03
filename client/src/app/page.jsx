@@ -13,12 +13,12 @@ import WorksTutors from "@/components/section/WorksTutors";
 export default function Home() {
   return (
     <div className="relative">
-      <Banner />
+      <Banner/>
       <SearchTutoring />
       <FindSubject />
-      <WebStats/>
+      <WebStats />
       <TuitionType />
-      <BecomeMessage/>
+      <BecomeMessage />
       <PeopleUs />
       <OurServices />
       <WorksTutors />
