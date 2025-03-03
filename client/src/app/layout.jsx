@@ -1,9 +1,13 @@
+
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import AuthProvider from "@/provider/AuthProvider";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
