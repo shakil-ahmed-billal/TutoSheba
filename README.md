@@ -25,7 +25,7 @@ TutorSheba is an advanced web-based platform designed to seamlessly connect stud
 - **Next.js** (15.2.0) - Fast & SEO-friendly React framework
 - **React** (19.0.0) - UI library for building interfaces
 - **TailwindCSS** (4) - Utility-first CSS framework
-- **Radix UI** - Modular and accessible UI components
+- **Shadcn UI** - Modular and accessible UI components
 - **React Hook Form** - Form validation and state management
 - **Lucide React** - Beautiful & customizable icons
 - **React Fast Marquee** - Smooth scrolling animations
@@ -69,7 +69,7 @@ pnpm install
 ### 🔑 Configure Environment Variables
 Create a `.env` file inside the `server` directory and add:
 ```env
-MONGO_URI=mongodb+srv://xhakil2023:PIejywgbwJGw9W20@cluster0.ldsdi.mongodb.net/TutorSheba
+MONGO_URI=mongodb+srv://
 JWT_SECRET_KEY=fcc621e4d642b5c7d8ed3a3f274f67185cb568f7422163fdcfbaae435952b6ca9bb0e620e6923ada0fb80544cf971a395d4855306fdff2a647157437657111a6
 JWT_EXPIRES_IN=30d
 JWT_COOKIE_EXPIRES_IN=30
