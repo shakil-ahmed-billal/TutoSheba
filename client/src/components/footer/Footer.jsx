@@ -14,7 +14,7 @@ const Footer = () => {
                         <i><Youtube /></i>
                     </div>
                 </div>
-                <div className="col-span-3 flex justify-between">
+                <div className="col-span-3 flex gap-5 justify-center md:justify-between">
                     <div className="">
                         <h3 className="font-bold">Resources</h3>
                         <ul>
@@ -36,7 +36,7 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="col-span-4 place-content-end content-end flex flex-col items-end text-end">
+                <div className="col-span-4 md:place-content-end items-center  md:content-end flex flex-col md:items-end md:text-end">
                     <h3 className="font-bold">Download Our Mobile App</h3>
                     <Image src="/tsqrcode.webp" alt="google-play" width={180} height={180} />
                     <p>Our Android App is available right now. <br /> Scan the QR Code or Click the Button to Download</p>

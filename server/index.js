@@ -15,7 +15,7 @@ const app = express();
 // use middlewares
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000" , "https://tutor-sheba.vercel.app"],
     credentials: true,
   })
 );
