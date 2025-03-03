@@ -1,9 +1,10 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardFooter, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
-import { Dna, MapPin } from "lucide-react";
+import { ArrowLeft, Dna, MapPin } from "lucide-react";
+import Link from "next/link";
 import { use } from "react";
 
 const Page = ({ params }) => {
@@ -51,9 +52,9 @@ const Page = ({ params }) => {
     } = data.data || {};
 
     return (
-        <div className="container mx-auto p-8 mt-20">
+        <div className="mx-auto md:p-8 mt-20">
             <Card className="w-full bg-white shadow-lg rounded-xl border border-gray-200">
-                <CardHeader className="border-b p-6 bg-gray-50">
+                <CardHeader className="border-b pb-2">
                     <div className="flex justify-between items-center">
                         <p className="flex items-center gap-2 text-lg font-semibold text-gray-800">
                             <MapPin className="w-5 h-5 text-purple-600" /> {location}
@@ -63,10 +64,10 @@ const Page = ({ params }) => {
                 </CardHeader>
 
                 <CardContent className="px-6 py-4">
-                    <CardTitle className="text-3xl font-bold text-gray-900 mb-4">{title}</CardTitle>
+                    <CardTitle className="text-3xl font-bold text-gray-900 mb-4 text-center">{title}</CardTitle>
 
                     {/* Preferred Tuition Style */}
-                    <div className="flex flex-wrap gap-3 my-4">
+                    <div className="flex flex-wrap gap-3 my-4 items-center justify-center">
                         {preferredTuitionStyle?.length > 0 && (
                             <Button className="bg-purple-700 text-white px-4 py-2 rounded-md text-sm hover:bg-purple-800 transition duration-200">
                                 {preferredTuitionStyle.join(", ")}
@@ -103,11 +104,13 @@ const Page = ({ params }) => {
                     </div>
                 </CardContent>
 
-                <CardFooter className="flex justify-between items-center p-6 bg-gray-50 border-t">
-                    <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-200">
-                        View More Details
-                    </Button>
-                    <Button className="bg-green-600 text-white px-5 py-2 rounded-md hover:bg-green-700 transition-all duration-200">
+                <CardFooter className="flex justify-between items-center pt-5 border-t">
+                    <Link href={"/tutorJob"}>
+                        <Button variant="outline" className="bg-gradient-to-r from-[#590756] via-[#C60C82] to-[#590756] font-bold text-white rounded-none hover:text-white transition-all duration-200">
+                            <ArrowLeft /> Go Back to All Jobs
+                        </Button>
+                    </Link>
+                    <Button className="bg-green-600 text-white px-5 py-2 rounded-none hover:bg-green-700 transition-all duration-200">
                         Apply Now
                     </Button>
                 </CardFooter>

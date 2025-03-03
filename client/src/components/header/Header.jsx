@@ -24,7 +24,7 @@ const Header = () => {
 
     return (
         <div className="">
-            <div className="font-bold bg-gradient-to-r from-[#590756] to-[#CC0D85] text-white fixed top-0 left-0 z-10 right-0">
+            <div className="bg-gradient-to-r from-[#590756] via-[#C60C82] to-[#590756] font-bold text-white fixed top-0 left-0 z-10 right-0">
                 <div className="w-11/12 mx-auto flex justify-between items-center py-3">
                     <Link href="/">
                         <Image src="/logo.webp" alt="logo" width={150} height={150} className="w-36" />
