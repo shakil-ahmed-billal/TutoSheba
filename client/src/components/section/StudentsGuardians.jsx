@@ -2,7 +2,7 @@
 const StudentsGuardians = () => {
     return (
         <div className="w-11/12 mx-auto py-10">
-            <p className="text-3xl font-bold text-center py-10">Here's how it works for <span className="text-[#800080]">Students/Guardians</span> </p>
+            <p className="md:text-3xl text-xl font-bold text-center py-10">Here's how it works for <span className="text-[#800080]">Students/Guardians</span> </p>
             <div className="flex flex-col justify-center items-center">
                 <div className="flex">
                     

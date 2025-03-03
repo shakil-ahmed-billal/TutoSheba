@@ -12,8 +12,8 @@ import "swiper/css/navigation";
 const OurServices = () => {
   return (
     <div className="w-11/12 mx-auto py-10">
-      <p className="text-4xl font-bold text-center">Our Services</p>
-      <p className="text-xl text-center my-5">Here are services we provide</p>
+      <p className="md:text-3xl text-xl font-bold text-center">Our Services</p>
+      <p className="md:text-2xl text-center text-[#66789C] mb-5 md:my-5">Here are services we provide</p>
       <Swiper
         slidesPerView={1.5}
         spaceBetween={20}
@@ -24,7 +24,8 @@ const OurServices = () => {
         modules={[Pagination, Navigation, Autoplay]}
         breakpoints={{
           640: { slidesPerView: 1.5 },
-          1024: { slidesPerView: 5 },
+          1024: { slidesPerView: 4 },
+          1800: { slidesPerView: 5 },
         }}
         className="mySwiper"
       >
@@ -34,7 +35,7 @@ const OurServices = () => {
               <CardContent className="h-full">
                 <div className="w-full flex justify-center">
                   <img
-                    className="object-cover w-full h-[200px]"
+                    className="object-cover w-[250px] h-[250px]"
                     src={data.image}
                     alt="service"
                   />

@@ -7,7 +7,7 @@ const Featured = () => {
   return (
     <div className="bg-[#F2F6FD]">
       <div className="w-11/12 mx-auto py-10">
-        <p className="text-3xl font-bold">
+        <p className="md:text-3xl text-xl pb-5 font-bold">
           We were <span className="text-[#800080]">Featured</span> on:
         </p>
         <Marquee gradient={false} speed={50} pauseOnHover={true}>
